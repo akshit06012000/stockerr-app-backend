@@ -40,10 +40,11 @@ app.get("/", (req, res) => {
 app.use(errorHandler);
 // Connect to DB and start server
 
+const PORT = process.env.PORT || 5000;
 mongoose
   .connect('mongodb+srv://akshitvyas_av:carpediem@cluster0.sbxvuce.mongodb.net/Stocker-app?retryWrites=true&w=majority')
   .then(() => {
-    app.listen(5000, () => {
+    app.listen(PORT, () => {
       console.log(`Server Running on port 5000`);
     });
   })
