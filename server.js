@@ -41,7 +41,7 @@ app.use(errorHandler);
 // Connect to DB and start server
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect('mongodb+srv://akshitvyas_av:carpediem@cluster0.sbxvuce.mongodb.net/Stocker-app?retryWrites=true&w=majority')
   .then(() => {
     app.listen(5000, () => {
       console.log(`Server Running on port 5000`);
