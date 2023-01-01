@@ -24,7 +24,7 @@ app.use(bodyParser.json());
   })
 );*/
 
-app.use(cors());
+//app.use(cors());
 
 app.use(function (req, res, next) {
     //Enabling CORS
