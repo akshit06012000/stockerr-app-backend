@@ -24,11 +24,15 @@ app.use(bodyParser.json());
   })
 );*/
 
+app.use(function (request, response, next) {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-app.use(cors({
-  origin:[*]
-  ));
+
 // Routes Middleware
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
