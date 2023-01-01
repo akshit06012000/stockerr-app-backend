@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
+@Crossorigin
 // Routes Middleware
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
